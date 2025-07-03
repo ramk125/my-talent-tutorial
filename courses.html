@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Talent Tutorial - All Courses</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/Practice2.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        .course-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .course-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+        }
+        .course-image {
+            height: 200px;
+            object-fit: cover;
+        }
+        .course-category {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .course-rating {
+            color: #ffc107;
+        }
+        .course-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .filter-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .search-box {
+            position: relative;
+        }
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+        }
+        .search-box input {
+            padding-left: 40px;
+        }
+    </style>
+</head>
+
+<body class="container-fluid" style="background-color: #f8f9fa">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="home.html">
+                <img src="https://img.freepik.com/premium-vector/logo-education-that-says-education-it_856308-755.jpg?semt=ais_hybrid"
+                    alt="Logo" width="40" height="40" class="me-2">
+                <span class="fw-bold T-title">TALENT TUTORIAL</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="btn m-1" href="PracticeNew.html"><i class="fa fa-home me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn m-1" href="about.html"><i class="fa fa-info-circle me-1"></i>About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn m-1" href="contact.html"><i class="fa fa-envelope me-1"></i>Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn m-1 active" href="courses.html"><i class="fa fa-book me-1"></i>Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn m-1" href="profile.html"><i class="fa fa-user me-1"></i>Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn m-1" href="settings.html"><i class="fa fa-cog me-1"></i>Setting</a>
+                    </li>
+
+                    <li class="nav-item me-3">
+                        <form class="d-flex">
+                            <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
+                        </form>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="fas fa-sign-in-alt me-1"></i>Login
+                        </button>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#registerModal">
+                            <i class="fas fa-user-plus me-1"></i>Register
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section py-5 mt-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Explore Our Courses</h1>
+                    <p class="lead mb-4">Discover a wide range of courses designed to help you achieve your academic goals.</p>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="form-control form-control-lg" placeholder="Search courses...">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://img.freepik.com/free-vector/online-education-concept-illustration_114360-1081.jpg" 
+                         alt="Education Illustration" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container py-5">
+        <div class="row">
+            <!-- Filters Sidebar -->
+            <div class="col-lg-3">
+                <div class="filter-section mb-4">
+                    <h5 class="mb-4">Filters</h5>
+                    
+                    <div class="mb-4">
+                        <h6>Categories</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="category1">
+                            <label class="form-check-label" for="category1">Classes 6-12</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="category2">
+                            <label class="form-check-label" for="category2">Classes 1-5</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="category3">
+                            <label class="form-check-label" for="category3">Extra Learning</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6>Price Range</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="price" id="price1">
+                            <label class="form-check-label" for="price1">Free</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="price" id="price2">
+                            <label class="form-check-label" for="price2">Paid</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6>Level</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="level1">
+                            <label class="form-check-label" for="level1">Beginner</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="level2">
+                            <label class="form-check-label" for="level2">Intermediate</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="level3">
+                            <label class="form-check-label" for="level3">Advanced</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Grid -->
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4>All Courses</h4>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Sort by: Popular
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Popular</a></li>
+                            <li><a class="dropdown-item" href="#">Newest</a></li>
+                            <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
+                            <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <!-- Course Card 1 -->
+                    <div class="col">
+                        <div class="card course-card h-100">
+                            <span class="badge bg-success course-badge">New</span>
+                            <img src="https://img.freepik.com/free-vector/math-background_23-2148146940.jpg" 
+                                 class="card-img-top course-image" alt="Mathematics">
+                            <div class="card-body">
+                                <div class="course-category mb-2">Mathematics</div>
+                                <h5 class="card-title">Class 12 Mathematics</h5>
+                                <p class="card-text">Advanced mathematics course covering calculus, algebra, and geometry.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span class="text-muted">(4.5)</span>
+                                    </div>
+                                    <div class="course-price">₹999</div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-top-0">
+                                <a href="#" class="btn btn-primary w-100">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 2 -->
+                    <div class="col">
+                        <div class="card course-card h-100">
+                            <span class="badge bg-info course-badge">Popular</span>
+                            <img src="https://img.freepik.com/free-vector/science-background-design_23-2148501728.jpg" 
+                                 class="card-img-top course-image" alt="Science">
+                            <div class="card-body">
+                                <div class="course-category mb-2">Science</div>
+                                <h5 class="card-title">Class 11 Physics</h5>
+                                <p class="card-text">Comprehensive physics course with practical experiments and simulations.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="text-muted">(5.0)</span>
+                                    </div>
+                                    <div class="course-price">₹899</div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-top-0">
+                                <a href="#" class="btn btn-primary w-100">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 3 -->
+                    <div class="col">
+                        <div class="card course-card h-100">
+                            <span class="badge bg-warning course-badge">Best Seller</span>
+                            <img src="https://img.freepik.com/free-vector/english-learning-concept-illustration_114360-1081.jpg" 
+                                 class="card-img-top course-image" alt="English">
+                            <div class="card-body">
+                                <div class="course-category mb-2">English</div>
+                                <h5 class="card-title">Class 10 English</h5>
+                                <p class="card-text">Master English language skills with interactive lessons and practice tests.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span class="text-muted">(4.0)</span>
+                                    </div>
+                                    <div class="course-price">₹799</div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-top-0">
+                                <a href="#" class="btn btn-primary w-100">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 4 -->
+                    <div class="col">
+                        <div class="card course-card h-100">
+                            <img src="https://img.freepik.com/free-vector/programming-concept-illustration_114360-1351.jpg" 
+                                 class="card-img-top course-image" alt="Coding">
+                            <div class="card-body">
+                                <div class="course-category mb-2">Coding</div>
+                                <h5 class="card-title">Python Programming</h5>
+                                <p class="card-text">Learn Python programming from scratch with hands-on projects.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span class="text-muted">(5.0)</span>
+                                    </div>
+                                    <div class="course-price">₹1499</div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-top-0">
+                                <a href="#" class="btn btn-primary w-100">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 5 -->
+                    <div class="col">
+                        <div class="card course-card h-100">
+                            <span class="badge bg-danger course-badge">Limited Time</span>
+                            <img src="https://img.freepik.com/free-vector/art-craft-concept-illustration_114360-1081.jpg" 
+                                 class="card-img-top course-image" alt="Art & Craft">
+                            <div class="card-body">
+                                <div class="course-category mb-2">Art & Craft</div>
+                                <h5 class="card-title">Creative Arts</h5>
+                                <p class="card-text">Explore various art forms and craft techniques with expert guidance.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span class="text-muted">(4.5)</span>
+                                    </div>
+                                    <div class="course-price">₹999</div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-top-0">
+                                <a href="#" class="btn btn-primary w-100">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Card 6 -->
+                    <div class="col">
+                        <div class="card course-card h-100">
+                            <img src="https://img.freepik.com/free-vector/music-concept-illustration_114360-1081.jpg" 
+                                 class="card-img-top course-image" alt="Music">
+                            <div class="card-body">
+                                <div class="course-category mb-2">Music</div>
+                                <h5 class="card-title">Classical Music</h5>
+                                <p class="card-text">Learn classical music theory and practice with professional musicians.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span class="text-muted">(4.0)</span>
+                                    </div>
+                                    <div class="course-price">₹1299</div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-top-0">
+                                <a href="#" class="btn btn-primary w-100">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Page navigation" class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Talent Tutorial is your one-stop destination for quality education and interactive learning.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="home.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About</a></li>
+                        <li><a href="courses.html" class="text-white">Courses</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: support@talenttutorial.com</p>
+                    <p>Phone: +91 70709 79776</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-white"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter fa-2x"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 border-top pt-3">
+                <p class="mb-0">&copy; 2025 Talent Tutorial. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="loginModalLabel">User Login</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginUsername" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="loginUsername" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" name="password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p class="mb-0">Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register here</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="registerModalLabel">Create Account</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" name="fullname" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">Register</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p class="mb-0">Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login here</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+    
+    <!-- Common JavaScript -->
+    <script src="projectScript.js"></script>
+    
+    <!-- Page-specific JavaScript -->
+    <script src="courses.js"></script>
+</body>
+
+</html> 

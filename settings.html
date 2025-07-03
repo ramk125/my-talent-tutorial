@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - Talent Tutorial</title>
+
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    
+    <!-- Font Awesome CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/home.css">
+
+    <link rel="stylesheet" href="./fontawesome-free-6.7.2-web/css/all.css" />
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css" />
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="home.html">
+                <img src="https://img.freepik.com/premium-vector/logo-education-that-says-education-it_856308-755.jpg?semt=ais_hybrid"
+                    alt="Logo" width="40" height="40" class="me-2" />
+                <span class="fw-bold T-title">TALENT TUTORIAL</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center header flex-nowrap">
+                    <li class="nav-item first">
+                        <a class="btn m-1" href="PracticeNew.html"><i class="fa fa-home me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item first">
+                        <a class="btn m-1" href="about.html"><i class="fa fa-info-circle me-1"></i>About</a>
+                    </li>
+                    <li class="nav-item first">
+                        <a class="btn m-1" href="contact.html"><i class="fa fa-envelope me-1"></i>Contact</a>
+                    </li>
+                    <li class="nav-item first">
+                        <a class="btn m-1" href="course.html"><i class="fa fa-book me-1"></i>Course</a>
+                    </li>
+                    <li class="nav-item first">
+                        <a class="btn m-1" href="profile.html"><i class="fa fa-user me-1"></i>Profile</a>
+                    </li>
+                    <li class="nav-item first">
+                        <a class="btn m-1 active" href="settings.html"><i class="fa fa-cog me-1"></i>Setting</a>
+                    </li>
+                    <li class="nav-item me-3 ">
+                        <form class="d-flex">
+                            <input class="form-control" type="search" placeholder="Search..." aria-label="Search" />
+                        </form>
+                    </li>
+                    <li class="nav-item first">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">
+                            <i class="fas fa-sign-in-alt me-1"></i>Login
+                        </button>
+                    </li>
+                    <li class="nav-item ms-2 first">
+                        <button class="btn btn-success" type="button" data-bs-toggle="modal"
+                            data-bs-target="#registerModal">
+                            <i class="fas fa-user-plus me-1"></i>Register
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="list-group list-group-flush">
+                        <a href="#account" class="list-group-item list-group-item-action active" data-bs-toggle="list">
+                            <i class="fas fa-user-cog me-2"></i>Account Settings
+                        </a>
+                        <a href="#notifications" class="list-group-item list-group-item-action" data-bs-toggle="list">
+                            <i class="fas fa-bell me-2"></i>Notifications
+                        </a>
+                        <a href="#privacy" class="list-group-item list-group-item-action" data-bs-toggle="list">
+                            <i class="fas fa-lock me-2"></i>Privacy
+                        </a>
+                        <a href="#security" class="list-group-item list-group-item-action" data-bs-toggle="list">
+                            <i class="fas fa-shield-alt me-2"></i>Security
+                        </a>
+                        <a href="#appearance" class="list-group-item list-group-item-action" data-bs-toggle="list">
+                            <i class="fas fa-palette me-2"></i>Appearance
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="tab-content">
+                    <!-- Account Settings -->
+                    <div class="tab-pane fade show active" id="account">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Account Settings</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="name" value="John Doe">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email" value="john.doe@example.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" value="+91 70709 79776">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="bio" class="form-label">Bio</label>
+                                        <textarea class="form-control" id="bio" rows="3">I am a passionate learner who loves to explore new subjects and improve my knowledge.</textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications -->
+                    <div class="tab-pane fade" id="notifications">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Notification Settings</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                            <label class="form-check-label" for="emailNotifications">Email Notifications</label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="courseUpdates" checked>
+                                            <label class="form-check-label" for="courseUpdates">Course Updates</label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="assignmentReminders" checked>
+                                            <label class="form-check-label" for="assignmentReminders">Assignment Reminders</label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="newsletter">
+                                            <label class="form-check-label" for="newsletter">Newsletter</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy -->
+                    <div class="tab-pane fade" id="privacy">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Privacy Settings</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="profileVisibility" checked>
+                                            <label class="form-check-label" for="profileVisibility">Profile Visibility</label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="courseProgress" checked>
+                                            <label class="form-check-label" for="courseProgress">Show Course Progress</label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="achievements">
+                                            <label class="form-check-label" for="achievements">Show Achievements</label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="activityFeed">
+                                            <label class="form-check-label" for="activityFeed">Show Activity Feed</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security -->
+                    <div class="tab-pane fade" id="security">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Security Settings</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="currentPassword" class="form-label">Current Password</label>
+                                        <input type="password" class="form-control" id="currentPassword">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="newPassword" class="form-label">New Password</label>
+                                        <input type="password" class="form-control" id="newPassword">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                                        <input type="password" class="form-control" id="confirmPassword">
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="twoFactorAuth">
+                                            <label class="form-check-label" for="twoFactorAuth">Two-Factor Authentication</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Update Password</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appearance -->
+                    <div class="tab-pane fade" id="appearance">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Appearance Settings</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="theme" class="form-label">Theme</label>
+                                        <select class="form-select" id="theme">
+                                            <option value="light">Light</option>
+                                            <option value="dark">Dark</option>
+                                            <option value="system">System Default</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="fontSize" class="form-label">Font Size</label>
+                                        <select class="form-select" id="fontSize">
+                                            <option value="small">Small</option>
+                                            <option value="medium" selected>Medium</option>
+                                            <option value="large">Large</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="highContrast">
+                                            <label class="form-check-label" for="highContrast">High Contrast Mode</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5">
+        <div class="container-fluid px-5">
+            <div class="row ">
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="text-info fw-bold">About Us</h5>
+                    <p>Talent Tutorial is your one-stop destination for quality education and interactive learning.</p>
+                </div>
+
+                <div class="col-6 col-md-6 col-lg-3">
+                    <h5 class="text-info fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="home.html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="about.html" class="text-white text-decoration-none">About</a></li>
+                        <li><a href="course.html" class="text-white text-decoration-none">Courses</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+                        <li><a href="faq.html" class="text-white text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-6 col-lg-3">
+                    <h5 class="text-info fw-bold">Contact Us</h5>
+                    <p>Email: support@talenttutorial.com</p>
+                    <p>Phone: +91 70709 79776</p>
+                    <p>Address: Hatiwala, Sonapur, Near Sonay Maharaj Asthan</p>
+                </div>
+
+                <!-- Social Media -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="text-info fw-bold">Follow Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"
+                                width="30"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"
+                                width="30"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"
+                                width="30"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="LinkedIn"
+                                width="30"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4 border-top pt-3">
+                <p class="mb-0">&copy; 2025 Talent Tutorial. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="loginModalLabel">User Login</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginUsername" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="loginUsername" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" name="password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p class="mb-0">Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register here</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="registerModalLabel">Create Account</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" name="fullname" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">Register</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p class="mb-0">Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login here</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- Common JavaScript -->
+    <!-- <script src="projectScript.js"></script> -->
+    
+    <!-- Page-specific JavaScript -->
+    <script src="settings.js"></script>
+</body>
+
+</html> 

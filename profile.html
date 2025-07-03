@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Talent Tutorial - Profile</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="./fontawesome-free-6.7.2-web/css/all.css" />
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css" />
+    
+    <!-- Custom CSS -->
+ <link rel="stylesheet" href="css/Profile.css">
+</head>
+
+<body class="container-fluid">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="home.html">
+                <img src="https://img.freepik.com/premium-vector/logo-education-that-says-education-it_856308-755.jpg?semt=ais_hybrid"
+                    alt="Logo" width="40" height="40" class="me-2" />
+                <span class="fw-bold T-title">TALENT TUTORIAL</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center header flex-nowrap">
+                    <li class="nav-item first">
+                        <a class="btn m-1" href="PracticeNew.html"><i class="fa fa-home me-1"></i>Home</a>
+                    </li>
+                    <li class="nav-item first">
+                        <a class="btn m-1" href="about.html"><i class="fa fa-info-circle me-1"></i>About</a>
+                    </li>
+                    <li class="nav-item first">
+                        <a class="btn m-1" href="contact.html"><i class="fa fa-envelope me-1"></i>Contact</a>
+                    </li>
+                    <li class="nav-item first">
+                        <a class="btn m-1" href="course.html"><i class="fa fa-book me-1"></i>Course</a>
+                    </li>
+                    <li class="nav-item first">
+                        <a class="btn m-1" href="profile.html"><i class="fa fa-user me-1"></i>Profile</a>
+                    </li>
+                    <li class="nav-item first">
+                        <a class="btn m-1 active" href="settings.html"><i class="fa fa-cog me-1"></i>Setting</a>
+                    </li>
+                    <li class="nav-item me-3 ">
+                        <form class="d-flex">
+                            <input class="form-control" type="search" placeholder="Search..." aria-label="Search" />
+                        </form>
+                    </li>
+                    <li class="nav-item first">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">
+                            <i class="fas fa-sign-in-alt me-1"></i>Login
+                        </button>
+                    </li>
+                    <li class="nav-item ms-2 first">
+                        <button class="btn btn-success" type="button" data-bs-toggle="modal"
+                            data-bs-target="#registerModal">
+                            <i class="fas fa-user-plus me-1"></i>Register
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Profile Section -->
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <!-- Profile Sidebar -->
+            <div class="col-md-4">
+                <div class="card profile-card mb-4">
+                    <div class="card-body text-center">
+                        <div class="profile-image-container">
+                            <img id="profileImage" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile Image">
+                            <div class="camera-button" onclick="document.getElementById('profileImageInput').click()">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <input type="file" id="profileImageInput" class="d-none" accept="image/*">
+                        </div>
+                        <h4 class="mb-1">John Doe</h4>
+                        <p class="text-muted mb-3">Student</p>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+                                <i class="fas fa-edit me-2"></i>Edit Profile
+                            </button>
+                            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+                                <i class="fas fa-key me-2"></i>Change Password
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Stats -->
+                <div class="card profile-stats mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Profile Stats</h5>
+                        <div class="stat-item d-flex justify-content-between align-items-center">
+                            <span><i class="fas fa-book me-2 text-primary"></i>Courses Enrolled</span>
+                            <span class="stat-value" data-value="12">0</span>
+                        </div>
+                        <div class="stat-item d-flex justify-content-between align-items-center">
+                            <span><i class="fas fa-check-circle me-2 text-success"></i>Courses Completed</span>
+                            <span class="stat-value" data-value="8">0</span>
+                        </div>
+                        <div class="stat-item d-flex justify-content-between align-items-center">
+                            <span><i class="fas fa-certificate me-2 text-warning"></i>Certificates</span>
+                            <span class="stat-value" data-value="5">0</span>
+                        </div>
+                        <div class="stat-item d-flex justify-content-between align-items-center">
+                            <span><i class="fas fa-clock me-2 text-info"></i>Hours Learned</span>
+                            <span class="stat-value" data-value="120">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Connect With Us</h5>
+                        <div class="social-links d-flex justify-content-center gap-3">
+                            <a href="#" class="text-primary bg-light"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-info bg-light"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-danger bg-light"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-primary bg-light"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-8">
+                <!-- Enrolled Courses -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Enrolled Courses</h5>
+                        <div class="enrolled-course card mb-3">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="course-title mb-0"><i class="fas fa-book me-2 text-primary"></i>Class 12 Mathematics</h6>
+                                    <span class="badge bg-primary">In Progress</span>
+                                </div>
+                                <div class="progress mb-2">
+                                    <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="progress-text small text-muted">0% Complete</span>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-primary btn-complete">
+                                            <i class="fas fa-check me-1"></i>Mark Complete
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-success btn-download">
+                                            <i class="fas fa-download me-1"></i>Download Certificate
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more enrolled courses here -->
+                    </div>
+                </div>
+
+                <!-- Notification Settings -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Notification Settings</h5>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input notification-toggle" type="checkbox" id="emailNotifications" 
+                                data-setting="Email" checked>
+                            <label class="form-check-label" for="emailNotifications">
+                                <i class="fas fa-envelope me-2 text-primary"></i>Email Notifications
+                            </label>
+                        </div>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input notification-toggle" type="checkbox" id="courseUpdates" 
+                                data-setting="Course Updates" checked>
+                            <label class="form-check-label" for="courseUpdates">
+                                <i class="fas fa-bell me-2 text-warning"></i>Course Updates
+                            </label>
+                        </div>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input notification-toggle" type="checkbox" id="certificateAlerts" 
+                                data-setting="Certificate" checked>
+                            <label class="form-check-label" for="certificateAlerts">
+                                <i class="fas fa-certificate me-2 text-success"></i>Certificate Alerts
+                            </label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input notification-toggle" type="checkbox" id="promotionalEmails" 
+                                data-setting="Promotional">
+                            <label class="form-check-label" for="promotionalEmails">
+                                <i class="fas fa-bullhorn me-2 text-info"></i>Promotional Emails
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="profileForm">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" value="John Doe">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" value="john.doe@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone" value="+1 234 567 8900">
+                        </div>
+                        <div class="mb-3">
+                            <label for="bio" class="form-label">Bio</label>
+                            <textarea class="form-control" id="bio" rows="3">Passionate learner and educator.</textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="document.getElementById('profileForm').submit()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="passwordForm">
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="currentPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="document.getElementById('passwordForm').submit()">Change Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="loginModalLabel">User Login</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginUsername" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="loginUsername" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" name="password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p class="mb-0">Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register here</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="registerModalLabel">Create Account</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" name="fullname" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">Register</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p class="mb-0">Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login here</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script> -->
+
+    <!-- Font Awesome JS -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <!-- Common JavaScript -->
+    <script src="projectScript.js"></script>
+
+    <!-- Page-specific JavaScript -->
+    <script src="profile.js"></script>
+</body>
+
+</html>
